@@ -2,7 +2,7 @@ package br;
 
 import java.time.LocalDate;
 
-public class Mentoria {
+public class Mentoria extends Conteudo {
     private String titulo;
     private String descrição;
     private LocalDate data;
@@ -37,6 +37,13 @@ public class Mentoria {
     @Override
     public String toString() {
         return "Mentoria [titulo=" + titulo + ", descrição=" + descrição + ", data=" + data + "]";
+    }
+
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20;
+        // Seguindo a regra de negócio vamos precisar adicionar mais xp sempre que o
+        // aluno realizar um mentoria
     }
 
 }
